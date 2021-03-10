@@ -4,13 +4,20 @@ $(document).ready(function(){
     var numeriCasuali = [];
     var userChoices = [];
     var numeriRicordati = [];
-
+    var min = 1;
+    var max = 100;
 
     // ---------------- MAIN ------------
     for(var i = 0; i < 5; i++){
-        numeriCasuali.push(randomNumber(1,100));
+        do{
+          var tmp = randomNumber(min,max);
+        } while (numeriCasuali.includes(tmp))
+        numeriCasuali.push(tmp);
     }
     console.log(numeriCasuali);
+
+
+    
     // Un alert espone 5 numeri casuali diversi.
     alert('Ricordati questi numeri: ' + numeriCasuali);
     
